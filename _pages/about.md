@@ -34,22 +34,34 @@ redirect_from:
   <div class="achievements-section">
     <h2 class="fade-in">🏆 Tales of Triumph</h2>
     <div class="achievement-grid">
-      <div class="achievement-card">
-        <div class="achievement-content">
-          <h3>👑 QA Master</h3>
-          <p>Copper Mobile's Elite Bug Hunter</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>👑 QA Master</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Copper Mobile's Elite Bug Hunter</p>
+          </div>
         </div>
       </div>
-      <div class="achievement-card">
-        <div class="achievement-content">
-          <h3>⚔️ Call of Duty</h3>
-          <p>Beyond Testing Boundaries</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>⚔️ Call of Duty</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Beyond Testing Boundaries</p>
+          </div>
         </div>
       </div>
-      <div class="achievement-card">
-        <div class="achievement-content">
-          <h3>🎯 Bugathon Champion</h3>
-          <p>Most Bugs Captured in One Day</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🎯 Bugathon Champion</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Most Bugs Captured in One Day</p>
+          </div>
         </div>
       </div>
     </div>
@@ -58,11 +70,11 @@ redirect_from:
   <div class="certifications-section">
     <h2 class="fade-in">📜 Scrolls of Knowledge</h2>
     <div class="cert-container">
-      <div class="cert-item">
+      <div class="cert-item glow-card">
         <span>🎓 ISTQB Certified</span>
         <small>July 2023</small>
       </div>
-      <div class="cert-item">
+      <div class="cert-item glow-card">
         <span>🌐 Accessibility Specialist</span>
         <small>November 2024</small>
       </div>

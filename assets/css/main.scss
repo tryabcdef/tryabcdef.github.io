@@ -227,3 +227,145 @@
 .greedy-nav {
   z-index: 1000;
 }
+
+
+/* Flip Card Animation */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    
+    &:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .flip-card-front {
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+    color: #333;
+    h3 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+  }
+  
+  .flip-card-back {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    transform: rotateY(180deg);
+    p {
+      margin: 0;
+      font-size: 1.2em;
+    }
+  }
+  
+  /* Glowing Certificate Cards */
+  .glow-card {
+    position: relative;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+      );
+      transform: rotate(45deg);
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      
+      &::before {
+        animation: shine 1.5s ease-out;
+        opacity: 1;
+      }
+    }
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(45deg);
+    }
+  }
+  
+  /* Mobile Adjustments */
+  @media screen and (max-width: 768px) {
+    .flip-card {
+      height: 150px;  /* Slightly smaller on mobile */
+    }
+    
+    .flip-card-front h3 {
+      font-size: 1.2em;
+    }
+    
+    .flip-card-back p {
+      font-size: 1em;
+    }
+    
+    /* Convert flip to touch-friendly interaction on mobile */
+    .flip-card-inner {
+      &:active {
+        transform: rotateY(180deg);
+      }
+    }
+    
+    /* Adjust glow effect for better mobile performance */
+    .glow-card {
+      &:active {
+        transform: translateY(-2px);
+      }
+      
+      &::before {
+        display: none;  /* Remove shine animation on mobile for better performance */
+      }
+    }
+  }
+  
+  /* Ensure hamburger menu stays on top */
+  .masthead {
+    z-index: 9999;
+  }
+  
+  .greedy-nav {
+    z-index: 9999;
+  }
