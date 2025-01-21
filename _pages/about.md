@@ -31,7 +31,7 @@ redirect_from:
     </div>
   </div>
 
-  <div class="achievements-section">
+ <div class="achievements-section">
     <h2 class="fade-in">🏆 Tales of Triumph</h2>
     <div class="achievement-grid">
       <div class="flip-card">
