@@ -1,52 +1,71 @@
 ---
-layout: archive
-title: "Software Quality Alchemist"
 permalink: /
+title: "Welcome To Automate Alchemist"
 author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
 ---
 
-<div class="intro-section" markdown="1">
-# Welcome to the Testing Laboratory! 🧪
+<div class="test-laboratory">
+  <div class="hero-section">
+    <div class="magic-title">
+      <h1>🧪 Testing Laboratory</h1>
+    </div>
+    <div class="typewriter">
+      <p class="typing-text">Hi, I'm <strong>Ujjwal Kumar Singh</strong></p>
+      <p class="typing-text">Software Quality Alchemist</p>
+      <p class="typing-text">Transmuting Bugs into Features since 2021</p>
+    </div>
+  </div>
 
-> "In the realm of quality, every test case is a spell, and every bug fix is a successful transmutation."
+  <div class="skills-section">
+    <h2 class="fade-in">🔮 Alchemist's Arsenal</h2>
+    <div class="skill-grid">
+      <div class="skill-card">API Testing</div>
+      <div class="skill-card">Selenium</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">Mobile Testing</div>
+      <div class="skill-card">CI/CD</div>
+      <div class="skill-card">Documentation</div>
+    </div>
+  </div>
 
-Hi there! I'm Ujjwal Kumar Singh, your friendly neighborhood Software Alchemist, turning bugs into gold since 2020! With 3+ years of dedicated experience in software testing, I specialize in crafting exceptional quality for both mobile and web applications.
+  <div class="achievements-section">
+    <h2 class="fade-in">🏆 Tales of Triumph</h2>
+    <div class="achievement-grid">
+      <div class="achievement-card">
+        <div class="achievement-content">
+          <h3>👑 QA Master</h3>
+          <p>Copper Mobile's Elite Bug Hunter</p>
+        </div>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-content">
+          <h3>⚔️ Call of Duty</h3>
+          <p>Beyond Testing Boundaries</p>
+        </div>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-content">
+          <h3>🎯 Bugathon Champion</h3>
+          <p>Most Bugs Captured in One Day</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<div class="skills-section" markdown="1">
-## 🔮 The Alchemist's Arsenal
-
-- **Potion of API Testing**: Master brewer of Rest Assured with BDD, creating robust test scripts that reveal the deepest secrets of complex APIs
-- **Automation Elixir**: Wielding Selenium & Python to transform manual chaos into automated harmony
-- **Tools of the Trade**: Expert in Postman, JIRA, Git, and Swagger documentation divination
-
-</div>
-
-<div class="achievements-section" markdown="1">
-## 🏆 Tales of Triumph
-
-- 👑 **QA Master** at Copper Mobile - For exceptional quality standards
-- ⚔️ **Call Of Duty Award** - For ventures beyond the testing realm
-- 🏅 **Bugathon Champion** at Studio Graphene - Most bugs captured in a single day
-
-</div>
-
-<div class="certifications-section" markdown="1">
-## 📜 Scrolls of Certification
-
-- 🎓 ISTQB Certified Wizard (Summoned July 2023)
-- 🌐 Accessibility Specialist (Wix) (Mastered Nov 2024)
-
-</div>
-
-<div class="community-section" markdown="1">
-## 🤝 Community Enchantments
-
-I actively contribute to the testing community through:
-- Ministry of Testing knowledge sharing
-- YouTube tutorials on automation spells
-- Medium articles on testing craft
-- Open-source project contributions
-
+  <div class="certifications-section">
+    <h2 class="fade-in">📜 Scrolls of Knowledge</h2>
+    <div class="cert-container">
+      <div class="cert-item">
+        <span>🎓 ISTQB Certified</span>
+        <small>July 2023</small>
+      </div>
+      <div class="cert-item">
+        <span>🌐 Accessibility Specialist</span>
+        <small>November 2024</small>
+      </div>
+    </div>
+  </div>
 </div>
