@@ -62,17 +62,7 @@ redirect_from:
       </div>
     </div>
   </div>
-  <div class="community-section">
-    <h2>🌟 Community Impact</h2>
-    <div class="community-grid">
-      <div class="community-card">
-        <div class="community-card-inner">
-          <span class="icon">🚀</span>
-          <h3>Open Source Contributor</h3>
-          <p>Actively contributing to open-source testing frameworks and tools to empower the QA community</p>
-        </div>
-      </div>
-      ## Community Impact
+
 
 <div class="community-grid">
   <div class="community-card">
