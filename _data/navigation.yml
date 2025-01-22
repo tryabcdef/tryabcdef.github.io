@@ -5,23 +5,20 @@
 # prevent it from being included in the site.
 
 main:
-  - title: "Publications"
-    url: /publications/
-
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Teaching"
-    url: /teaching/    
+  - title: "Testing Musings"
+    url: /testing-musings/    
     
-  - title: "Portfolio"
-    url: /portfolio/
+  - title: "Testing Mindspace"
+    url: /testing-mindspace/
         
-  - title: "Blog Posts"
+  - title: "Books"
     url: /year-archive/
     
   - title: "CV"
     url: /cv/
+
+  - title: "WILT"
+    url: /wilt/   
     
-  - title: "Guide"
-    url: /markdown/
+  - title: "Exploring AI Tools"
+    url: /exploring-ai-tools/
