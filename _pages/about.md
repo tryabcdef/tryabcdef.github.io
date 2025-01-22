@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <div class="test-laboratory">
-  <div class="intro-section">
+  <div class="hero-section">
     <h1>🧪 Hello World!</h1>
     <div class="typewriter">
       <p>Hi, I'm Ujjwal Kumar Singh</p>
@@ -33,14 +33,35 @@ redirect_from:
   <div class="achievements-section">
     <h2>🏆 Tales of Triumph</h2>
     <div class="achievement-grid">
-      <div class="achievement-card">
-        <h3>👑 QA Master</h3>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>👑 QA Master</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Recognized for mastering QA tools and strategies!</p>
+          </div>
+        </div>
       </div>
-      <div class="achievement-card">
-        <h3>🏆 Call of Duty</h3>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🏆 Call of Duty</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Successfully led a critical release under tight deadlines!</p>
+          </div>
+        </div>
       </div>
-      <div class="achievement-card">
-        <h3>🎯 Bugathon Champ</h3>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🎯 Bugathon Champ</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Won the company-wide bug-hunting competition!</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -48,11 +69,11 @@ redirect_from:
   <div class="certifications-section">
     <h2>📜 Certifications</h2>
     <div class="cert-container">
-      <div class="cert-item">
+      <div class="cert-item glow-card">
         <span>🎓 ISTQB Certified</span>
         <small>July 2023</small>
       </div>
-      <div class="cert-item">
+      <div class="cert-item glow-card">
         <span>🌐 Accessibility Specialist</span>
         <small>November 2024</small>
       </div>
