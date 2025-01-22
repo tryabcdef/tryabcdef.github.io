@@ -79,37 +79,29 @@
 }
 
 .test-laboratory {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2em 1em;
-
-  .hero-section {
-    margin-bottom: 3em;
-
-    h1 {
-      font-size: 2.8em;
-      animation: typing 2s steps(30) 0.5s forwards, blink 0.8s step-end infinite alternate;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid;
-    }
-
-    .typewriter {
-        position: relative; /* Required for absolute positioning of the blinking cursor */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em 1em;
+  
+    .hero-section {
+      margin-bottom: 3em;
+  
+      h1 {
+        font-size: 2em; // Reduced size for "Hello World"
+        animation: typing 1s steps(20) forwards; // Shorter animation, no blinking
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: none; // Removed the blinking cursor
+      }
+  
+      .typewriter {
+        position: relative;
         font-family: 'Courier New', Courier, monospace;
-      
+        
         &::after {
-          content: ""; /* Adds the blinking cursor */
-          position: absolute;
-          display: inline-block;
-          width: 2px;
-          height: 1.3em; /* Match font size */
-          background: black; /* Cursor color */
-          animation: blink 0.8s step-end infinite alternate;
-          right: 0; /* Position at the end of the last line */
-          top: 0;
+          display: none; // Remove the blinking cursor
         }
-      
+        
         p {
           font-size: 1.3em;
           margin: 0.5em 0;
@@ -117,38 +109,38 @@
           position: relative;
           white-space: nowrap;
           overflow: hidden;
-          opacity: 0; /* Initially invisible */
+          opacity: 0;
           animation-fill-mode: forwards;
       
           &:nth-child(1) {
-            animation: typing 2s steps(30) 2.5s forwards;
-            animation-delay: 2.5s;
+            animation: typing 2s steps(30) 1.5s forwards;
           }
           &:nth-child(2) {
-            animation: typing 2s steps(30) 5s forwards;
-            animation-delay: 5s;
+            animation: typing 2s steps(30) 3.5s forwards;
           }
           &:nth-child(3) {
-            animation: typing 2s steps(30) 7.5s forwards;
-            animation-delay: 7.5s;
-          }
-          &:nth-child(4) {
-            animation: typing 2s steps(30) 10s forwards;
-            animation-delay: 10s;
+            animation: typing 2s steps(30) 5.5s forwards;
           }
         }
       }
-      
-      /* Keyframes for blinking cursor */
-      @keyframes blink {
-        50% {
-          opacity: 0;
-        }
-      }
-      
-      
-      
+    }
   }
+  
+  /* Simplified typing animation without blinking */
+  @keyframes typing {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+      
+      
+      
+  
 
   .skills-section {
     margin-bottom: 3em;
@@ -283,7 +275,7 @@
       }
     }
   }
-}
+
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
