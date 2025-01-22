@@ -368,3 +368,139 @@
   .greedy-nav {
     z-index: 9999;
   }
+  .skills-section {
+    margin: 2em 0;
+  
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin: 1em 0;
+    }
+  
+    .skill-card {
+      background: #2B2D42;  // Dark navy color matching your design
+      color: white;
+      padding: 0.8em 1.5em;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: #3D3F5C;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+    }
+  }
+  
+  /* Achievement Cards */
+  .achievements-section {
+    margin: 2em 0;
+  
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5em;
+      margin: 1em 0;
+    }
+  
+    .achievement-card {
+      background: #2B2D42;
+      color: white;
+      padding: 2em;
+      border-radius: 12px;
+      text-align: left;
+      transition: transform 0.3s ease;
+      
+      h3 {
+        margin: 0;
+        font-size: 1.2em;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+    }
+  }
+  
+  /* Certifications Section */
+  .certifications-section {
+    margin: 2em 0;
+  
+    .cert-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      margin: 1em 0;
+    }
+  
+    .cert-item {
+      background: white;
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      animation: bounce 2s infinite;
+      
+      span {
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+      
+      small {
+        color: #666;
+      }
+  
+      &:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+    }
+  }
+  
+  /* Bounce Animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Type writer effect for intro */
+  .typewriter {
+    p {
+      margin: 0.5em 0;
+      padding-left: 1em;
+      position: relative;
+      
+      &::before {
+        content: ">";
+        position: absolute;
+        left: 0;
+        color: #666;
+      }
+    }
+  }
+  
+  /* Mobile Adjustments */
+  @media screen and (max-width: 768px) {
+    .skill-grid {
+      justify-content: center;
+    }
+  
+    .skill-card {
+      font-size: 0.9em;
+    }
+  
+    .achievement-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .cert-item {
+      width: 100%;
+    }
+  }

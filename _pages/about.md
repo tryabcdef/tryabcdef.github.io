@@ -8,73 +8,51 @@ redirect_from:
 ---
 
 <div class="test-laboratory">
-  <div class="hero-section">
-    <div class="magic-title">
-      <h1>🧪 Testing Laboratory</h1>
-    </div>
+  <div class="intro-section">
+    <h1>🧪 Hello World!</h1>
     <div class="typewriter">
-      <p class="typing-text">Hi, I'm <strong>Ujjwal Kumar Singh</strong></p>
-      <p class="typing-text">Software Quality Alchemist</p>
-      <p class="typing-text">Transmuting Bugs into Features since 2021</p>
+      <p>Hi, I'm Ujjwal Kumar Singh</p>
+      <p>Software Tester</p>
+      <p>Uncovering Glitches & Crafting Quality since 2021.</p>
     </div>
   </div>
 
   <div class="skills-section">
-    <h2 class="fade-in">🔮 Alchemist's Arsenal</h2>
+    <h2>🔧 Testing Toolkit</h2>
     <div class="skill-grid">
-      <div class="skill-card">API Testing</div>
+      <div class="skill-card">Grey Box Testing</div>
       <div class="skill-card">Selenium</div>
       <div class="skill-card">Python</div>
-      <div class="skill-card">Mobile Testing</div>
-      <div class="skill-card">CI/CD</div>
-      <div class="skill-card">Documentation</div>
+      <div class="skill-card">API Testing</div>
+      <div class="skill-card">Mobile App Testing</div>
+      <div class="skill-card">CI/CD Pipelines</div>
+      <div class="skill-card">QA Documentation</div>
     </div>
   </div>
 
- <div class="achievements-section">
-    <h2 class="fade-in">🏆 Tales of Triumph</h2>
+  <div class="achievements-section">
+    <h2>🏆 Tales of Triumph</h2>
     <div class="achievement-grid">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3>👑 QA Master</h3>
-          </div>
-          <div class="flip-card-back">
-            <p>Copper Mobile's Elite Bug Hunter</p>
-          </div>
-        </div>
+      <div class="achievement-card">
+        <h3>👑 QA Master</h3>
       </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3>⚔️ Call of Duty</h3>
-          </div>
-          <div class="flip-card-back">
-            <p>Beyond Testing Boundaries</p>
-          </div>
-        </div>
+      <div class="achievement-card">
+        <h3>🏆 Call of Duty</h3>
       </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3>🎯 Bugathon Champion</h3>
-          </div>
-          <div class="flip-card-back">
-            <p>Most Bugs Captured in One Day</p>
-          </div>
-        </div>
+      <div class="achievement-card">
+        <h3>🎯 Bugathon Champ</h3>
       </div>
     </div>
   </div>
 
   <div class="certifications-section">
-    <h2 class="fade-in">📜 Scrolls of Knowledge</h2>
+    <h2>📜 Certifications</h2>
     <div class="cert-container">
-      <div class="cert-item glow-card">
+      <div class="cert-item">
         <span>🎓 ISTQB Certified</span>
         <small>July 2023</small>
       </div>
-      <div class="cert-item glow-card">
+      <div class="cert-item">
         <span>🌐 Accessibility Specialist</span>
         <small>November 2024</small>
       </div>
