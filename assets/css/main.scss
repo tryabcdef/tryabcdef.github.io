@@ -87,7 +87,7 @@
     margin-bottom: 3em;
 
     h1 {
-      font-size: 2.8em;
+      font-size: 2.4em;
       animation: typing 2s steps(30) 0.5s forwards, blink 0.8s step-end infinite alternate;
       white-space: nowrap;
       overflow: hidden;
@@ -298,6 +298,70 @@
 
     .certifications-section .cert-item {
       width: 100%;
+    }
+  }
+}
+.community-section {
+  margin: 2em 0;
+
+  .community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5em;
+    margin: 1em 0;
+  }
+
+  .community-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    padding: 1.8em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .community-card-inner {
+      text-align: center;
+
+      .icon {
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+        display: block;
+      }
+
+      h3 {
+        color: #2B2D42;
+        margin-bottom: 0.8em;
+        font-size: 1.3em;
+      }
+
+      p {
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Update mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .test-laboratory {
+    .hero-section h1 {
+      font-size: 2em;
+    }
+
+    .community-section {
+      .community-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .community-card {
+        padding: 1.5em;
+      }
     }
   }
 }
