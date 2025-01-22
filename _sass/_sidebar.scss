@@ -258,3 +258,79 @@
     }
   }
 }
+/* Enhanced sidebar styles - Add to _sass/sidebar.scss */
+
+.author__urls {
+  @include breakpoint($large) {
+    // Only apply these styles for desktop/laptop screens
+    li {
+      margin-bottom: 0.75em;
+      
+      a {
+        display: block;
+        padding: 0.75em 1em;
+        background-color: #f8f9fa;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        
+        &:hover {
+          background-color: darken(#f8f9fa, 5%);
+          transform: translateX(5px);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          text-decoration: none;
+        }
+
+        i {
+          width: 1.6em;
+          text-align: center;
+          margin-right: 0.5em;
+          color: $gray;
+        }
+      }
+    }
+  }
+
+  // Preserve existing mobile styles
+  @media screen and (max-width: $large - 1) {
+    li {
+      a {
+        // Reset any desktop-specific styles
+        background-color: transparent;
+        border: none;
+        transform: none;
+        box-shadow: none;
+        
+        &:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+// Enhance the whole sidebar container for desktop
+.sidebar {
+  @include breakpoint($large) {
+    background-color: transparent;
+    
+    .author__urls-wrapper {
+      margin-top: 2em;
+    }
+  }
+}
+
+// Optional: Add a subtle hover effect to the author avatar
+.author__avatar {
+  @include breakpoint($large) {
+    img {
+      transition: transform 0.2s ease-in-out;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
