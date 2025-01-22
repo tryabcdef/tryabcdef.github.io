@@ -95,47 +95,57 @@
     }
 
     .typewriter {
+        position: relative; /* Required for absolute positioning of the blinking cursor */
+        font-family: 'Courier New', Courier, monospace;
+      
+        &::after {
+          content: ""; /* Adds the blinking cursor */
+          position: absolute;
+          display: inline-block;
+          width: 2px;
+          height: 1.3em; /* Match font size */
+          background: black; /* Cursor color */
+          animation: blink 0.8s step-end infinite alternate;
+          right: 0; /* Position at the end of the last line */
+          top: 0;
+        }
+      
         p {
-          font-family: 'Courier New', Courier, monospace;
           font-size: 1.3em;
           margin: 0.5em 0;
           padding-left: 1em;
           position: relative;
-          white-space: nowrap; /* Prevent wrapping by default */
-          overflow: hidden; /* Ensure text respects boundaries */
-          border-right: 2px solid;
+          white-space: nowrap;
+          overflow: hidden;
           opacity: 0; /* Initially invisible */
-      
-          /* Allow wrapping and adjust for mobile */
-          @media screen and (max-width: 768px) {
-            white-space: normal; /* Enable text wrapping */
-            word-break: break-word; /* Ensure long words break properly */
-            overflow: visible; /* Ensure all text remains visible */
-            padding-right: 0; /* Remove unnecessary padding */
-          }
+          animation-fill-mode: forwards;
       
           &:nth-child(1) {
-            animation: typing 2s steps(30) 2.5s forwards, blink 0.8s step-end infinite alternate;
-            animation-fill-mode: forwards;
-            animation-delay: 2.5s; /* After "Hello World" */
+            animation: typing 2s steps(30) 2.5s forwards;
+            animation-delay: 2.5s;
           }
           &:nth-child(2) {
-            animation: typing 2s steps(30) 5s forwards, blink 0.8s step-end infinite alternate;
-            animation-fill-mode: forwards;
-            animation-delay: 5s; /* Sequentially after previous line */
+            animation: typing 2s steps(30) 5s forwards;
+            animation-delay: 5s;
           }
           &:nth-child(3) {
-            animation: typing 2s steps(30) 7.5s forwards, blink 0.8s step-end infinite alternate;
-            animation-fill-mode: forwards;
-            animation-delay: 7.5s; /* Sequentially after previous line */
+            animation: typing 2s steps(30) 7.5s forwards;
+            animation-delay: 7.5s;
           }
           &:nth-child(4) {
-            animation: typing 2s steps(30) 10s forwards, blink 0.8s step-end infinite alternate;
-            animation-fill-mode: forwards;
-            animation-delay: 10s; /* Sequentially after previous line */
+            animation: typing 2s steps(30) 10s forwards;
+            animation-delay: 10s;
           }
         }
       }
+      
+      /* Keyframes for blinking cursor */
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      
       
       
   }
