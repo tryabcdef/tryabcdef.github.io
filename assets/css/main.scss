@@ -96,15 +96,24 @@
 
     .typewriter {
         p {
-          font-family: 'Courier New', Courier, monospace;
-          font-size: 1.3em;
-          margin: 0.5em 0;
-          padding-left: 1em;
-          position: relative;
-          white-space: nowrap;
-          overflow: hidden;
-          border-right: 2px solid;
-          opacity: 0; /* Initially invisible */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3em;
+            margin: 0.5em 0;
+            padding-left: 1em;
+            position: relative;
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Ensure it respects boundaries */
+            border-right: 2px solid;
+            opacity: 0; /* Initially invisible */
+        
+            /* Add scrolling behavior on mobile */
+            @media screen and (max-width: 768px) {
+              white-space: nowrap; /* Prevent wrapping for consistent typing */
+              overflow-x: auto; /* Allow horizontal scrolling if text overflows */
+              padding-right: 0.5em; /* Add some padding for scroll */
+              -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
+            }
+          
       
           &:nth-child(1) {
             animation: typing 2s steps(30) 2.5s forwards, blink 0.8s step-end infinite alternate;
