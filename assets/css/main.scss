@@ -1,3 +1,6 @@
+---
+---
+
 /*
  *    Minimal Mistakes Jekyll Theme
  *
@@ -37,7 +40,7 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
-/* Custom Animations */
+/* Custom Animations and Styles */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -62,7 +65,7 @@
 
 @keyframes blink {
   50% {
-    opacity: 0;
+    border-color: transparent;
   }
 }
 
@@ -75,57 +78,16 @@
   }
 }
 
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0.5;
-  }
-}
-
-@keyframes floating {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(2deg);
-  }
-}
-
-@keyframes sparkle {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-
-/* Main Styles */
 .test-laboratory {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2em 1em;
 
-  /* Hero Section */
   .hero-section {
     margin-bottom: 3em;
 
     h1 {
-      font-size: 2.4em;
+      font-size: 2.8em;
       animation: typing 2s steps(30) 0.5s forwards, blink 0.8s step-end infinite alternate;
       white-space: nowrap;
       overflow: hidden;
@@ -133,48 +95,61 @@
     }
 
     .typewriter {
-      position: relative;
-      font-family: 'Courier New', Courier, monospace;
+        position: relative; /* Required for absolute positioning of the blinking cursor */
+        font-family: 'Courier New', Courier, monospace;
       
-      &::after {
-        content: "";
-        position: absolute;
-        display: inline-block;
-        width: 2px;
-        height: 1.3em;
-        background: black;
-        animation: blink 0.8s step-end infinite alternate;
-        right: 0;
-        top: 0;
+        &::after {
+          content: ""; /* Adds the blinking cursor */
+          position: absolute;
+          display: inline-block;
+          width: 2px;
+          height: 1.3em; /* Match font size */
+          background: black; /* Cursor color */
+          animation: blink 0.8s step-end infinite alternate;
+          right: 0; /* Position at the end of the last line */
+          top: 0;
+        }
+      
+        p {
+          font-size: 1.3em;
+          margin: 0.5em 0;
+          padding-left: 1em;
+          position: relative;
+          white-space: nowrap;
+          overflow: hidden;
+          opacity: 0; /* Initially invisible */
+          animation-fill-mode: forwards;
+      
+          &:nth-child(1) {
+            animation: typing 2s steps(30) 2.5s forwards;
+            animation-delay: 2.5s;
+          }
+          &:nth-child(2) {
+            animation: typing 2s steps(30) 5s forwards;
+            animation-delay: 5s;
+          }
+          &:nth-child(3) {
+            animation: typing 2s steps(30) 7.5s forwards;
+            animation-delay: 7.5s;
+          }
+          &:nth-child(4) {
+            animation: typing 2s steps(30) 10s forwards;
+            animation-delay: 10s;
+          }
+        }
       }
       
-      p {
-        font-size: 1.3em;
-        margin: 0.5em 0;
-        padding-left: 1em;
-        position: relative;
-        white-space: nowrap;
-        overflow: hidden;
-        opacity: 0;
-        animation-fill-mode: forwards;
-      
-        &:nth-child(1) {
-          animation: typing 2s steps(30) 2.5s forwards;
-          animation-delay: 2.5s;
-        }
-        &:nth-child(2) {
-          animation: typing 2s steps(30) 5s forwards;
-          animation-delay: 5s;
-        }
-        &:nth-child(3) {
-          animation: typing 2s steps(30) 7.5s forwards;
-          animation-delay: 7.5s;
+      /* Keyframes for blinking cursor */
+      @keyframes blink {
+        50% {
+          opacity: 0;
         }
       }
-    }
+      
+      
+      
   }
 
-  /* Skills Section */
   .skills-section {
     margin-bottom: 3em;
 
@@ -186,7 +161,7 @@
     }
 
     .skill-card {
-      background: #2B2D42;
+      background: #2B2D42; // Dark navy color
       color: white;
       padding: 0.6em 1.8em;
       border-radius: 12px;
@@ -198,11 +173,11 @@
         background: grey;
         transform: scale(1.1);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        width: 220px;
       }
     }
   }
 
-  /* Achievements Section */
   .achievements-section {
     margin-bottom: 3em;
 
@@ -266,141 +241,6 @@
     }
   }
 
-  /* Community Section */
-  .community-section {
-    margin-bottom: 3em;
-
-    .community-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5em;
-      margin: 1em 0;
-    }
-
-    .pulse-card {
-      position: relative;
-      background: linear-gradient(135deg, #2B2D42, #1a1b2e);
-      border-radius: 12px;
-      padding: 1.2em;
-      color: white;
-      overflow: hidden;
-      height: 120px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      
-      &:hover {
-        transform: translateY(-5px);
-      }
-      
-      .pulse-content {
-        display: flex;
-        align-items: center;
-        gap: 1em;
-        position: relative;
-        z-index: 2;
-      }
-
-      .pulse-icon {
-        font-size: 2em;
-        animation: bounce 2s infinite;
-      }
-
-      .pulse-text {
-        h3 {
-          margin: 0;
-          font-size: 1.1em;
-          font-weight: 600;
-        }
-
-        p {
-          margin: 0.3em 0 0;
-          font-size: 0.9em;
-          opacity: 0.8;
-        }
-      }
-
-      .pulse-effect {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        animation: pulse 2s infinite;
-      }
-    }
-
-    .floating-card {
-      position: relative;
-      background: linear-gradient(135deg, #6e8efb, #4a6cf7);
-      border-radius: 12px;
-      padding: 1.2em;
-      color: white;
-      height: 120px;
-      overflow: hidden;
-      cursor: pointer;
-      animation: floating 3s ease-in-out infinite;
-      box-shadow: 0 4px 15px rgba(74, 108, 247, 0.2);
-
-      .floating-content {
-        display: flex;
-        align-items: center;
-        gap: 1em;
-        position: relative;
-        z-index: 2;
-      }
-
-      .floating-icon {
-        font-size: 2em;
-      }
-
-      .floating-text {
-        h3 {
-          margin: 0;
-          font-size: 1.1em;
-          font-weight: 600;
-        }
-
-        p {
-          margin: 0.3em 0 0;
-          font-size: 0.9em;
-          opacity: 0.8;
-        }
-      }
-
-      .sparkles {
-        span {
-          position: absolute;
-          background: white;
-          width: 3px;
-          height: 3px;
-          border-radius: 50%;
-          opacity: 0;
-          
-          &:nth-child(1) {
-            top: 20%;
-            left: 20%;
-            animation: sparkle 2s linear infinite;
-          }
-
-          &:nth-child(2) {
-            top: 60%;
-            right: 20%;
-            animation: sparkle 2s linear infinite 0.4s;
-          }
-
-          &:nth-child(3) {
-            bottom: 20%;
-            left: 40%;
-            animation: sparkle 2s linear infinite 0.8s;
-          }
-        }
-      }
-    }
-  }
-
-  /* Certifications Section */
   .certifications-section {
     margin: 2em 0;
 
@@ -443,9 +283,11 @@
       }
     }
   }
+}
 
-  /* Mobile Responsiveness */
-  @media screen and (max-width: 768px) {
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .test-laboratory {
     .hero-section h1 {
       font-size: 2em;
     }
@@ -457,29 +299,70 @@
     .certifications-section .cert-item {
       width: 100%;
     }
+  }
+}
+
+// Add new community section styles
+.community-section {
+  margin: 2em 0;
+
+  .community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5em;
+    margin: 1em 0;
+  }
+
+  .community-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    padding: 1.8em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .community-card-inner {
+      text-align: center;
+
+      .icon {
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+        display: block;
+      }
+
+      h3 {
+        color: #2B2D42;
+        margin-bottom: 0.8em;
+        font-size: 1.3em;
+      }
+
+      p {
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Update mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .test-laboratory {
+    .hero-section h1 {
+      font-size: 2em;
+    }
 
     .community-section {
       .community-grid {
-        gap: 1em;
+        grid-template-columns: 1fr;
       }
-
-      .pulse-card, .floating-card {
-        height: 100px;
-        padding: 1em;
-
-        .pulse-icon, .floating-icon {
-          font-size: 1.6em;
-        }
-
-        .pulse-text, .floating-text {
-          h3 {
-            font-size: 0.9em;
-          }
-
-          p {
-            font-size: 0.75em;
-          }
-        }
+      
+      .community-card {
+        padding: 1.5em;
       }
     }
   }
