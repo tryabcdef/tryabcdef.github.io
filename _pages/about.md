@@ -72,15 +72,21 @@ redirect_from:
           <p>Actively contributing to open-source testing frameworks and tools to empower the QA community</p>
         </div>
       </div>
-      <div class="community-card">
-        <div class="community-card-inner">
-          <span class="icon">🎭</span>
-          <h3>Ministry of Testing Member</h3>
-          <p>Proud member sharing knowledge and innovative testing approaches with the global testing community</p>
-        </div>
-      </div>
-    </div>
+      ## Community Impact
+
+<div class="community-grid">
+  <div class="community-card">
+    <div class="icon">🚀</div>
+    <h3>Open Source Contributor</h3>
+    <p>Actively contributing to open-source testing frameworks and tools to empower the QA community.</p>
   </div>
+  <div class="community-card">
+    <div class="icon">🤝</div>
+    <h3>Ministry of Testing Member</h3>
+    <p>Proud member sharing knowledge and innovative testing approaches with the global testing community.</p>
+  </div>
+</div>
+
   <div class="certifications-section">
     <h2>📜 Certifications</h2>
     <div class="cert-container">
