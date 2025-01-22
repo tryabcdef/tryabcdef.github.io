@@ -62,25 +62,35 @@ redirect_from:
       </div>
     </div>
   </div>
-  <div class="community-section">
+ <div class="community-section">
     <h2>🌟 Community Impact</h2>
     <div class="community-grid">
-      <div class="community-card">
-        <div class="community-card-inner">
-          <span class="icon">🚀</span>
-          <h3>Open Source Contributor</h3>
-          <p>Actively contributing to open-source testing frameworks and tools to empower the QA community</p>
+      <div class="pulse-card">
+        <div class="pulse-content">
+          <div class="pulse-icon">🚀</div>
+          <div class="pulse-text">
+            <h3>Open Source Hero</h3>
+            <p>Contributing to test automation frameworks</p>
+          </div>
         </div>
+        <div class="pulse-effect"></div>
       </div>
-      <div class="community-card">
-        <div class="community-card-inner">
-          <span class="icon">🎭</span>
-          <h3>Ministry of Testing Member</h3>
-          <p>Proud member sharing knowledge and innovative testing approaches with the global testing community</p>
+      <div class="floating-card">
+        <div class="floating-content">
+          <div class="floating-icon">🎭</div>
+          <div class="floating-text">
+            <h3>Ministry of Testing</h3>
+            <p>Active community member & contributor</p>
+          </div>
+        </div>
+        <div class="sparkles">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
-  </div>
+</div>
   <div class="certifications-section">
     <h2>📜 Certifications</h2>
     <div class="cert-container">
