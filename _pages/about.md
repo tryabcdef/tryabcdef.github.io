@@ -6,7 +6,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
 <div class="test-laboratory">
   <div class="hero-section">
     <h1>🧪 Hello World!</h1>
@@ -16,7 +15,6 @@ redirect_from:
       <p>Uncovering Glitches & Crafting Quality since 2021.</p>
     </div>
   </div>
-
   <div class="skills-section">
     <h2>🔧 Testing Toolkit</h2>
     <div class="skill-grid">
@@ -29,7 +27,6 @@ redirect_from:
       <div class="skill-card">QA Documentation</div>
     </div>
   </div>
-
   <div class="achievements-section">
     <h2>🏆 Tales of Triumph</h2>
     <div class="achievement-grid">
@@ -65,7 +62,25 @@ redirect_from:
       </div>
     </div>
   </div>
-
+  <div class="community-section">
+    <h2>🌟 Community Impact</h2>
+    <div class="community-grid">
+      <div class="community-card">
+        <div class="community-card-inner">
+          <span class="icon">🚀</span>
+          <h3>Open Source Contributor</h3>
+          <p>Actively contributing to open-source testing frameworks and tools to empower the QA community</p>
+        </div>
+      </div>
+      <div class="community-card">
+        <div class="community-card-inner">
+          <span class="icon">🎭</span>
+          <h3>Ministry of Testing Member</h3>
+          <p>Proud member sharing knowledge and innovative testing approaches with the global testing community</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="certifications-section">
     <h2>📜 Certifications</h2>
     <div class="cert-container">
