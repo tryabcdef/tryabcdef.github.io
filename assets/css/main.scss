@@ -87,40 +87,64 @@
       margin-bottom: 3em;
   
       h1 {
-        font-size: 2em; // Reduced size for "Hello World"
-        animation: typing 1s steps(20) forwards; // Shorter animation, no blinking
-        white-space: nowrap;
+        font-size: 2em;
+        animation: typing 2s steps(15) forwards;
+        white-space: pre-wrap;
         overflow: hidden;
-        border-right: none; // Removed the blinking cursor
+        border-right: none;
       }
   
       .typewriter {
         position: relative;
         font-family: 'Courier New', Courier, monospace;
         
-        &::after {
-          display: none; // Remove the blinking cursor
-        }
-        
         p {
           font-size: 1.3em;
           margin: 0.5em 0;
           padding-left: 1em;
           position: relative;
-          white-space: nowrap;
-          overflow: hidden;
+          white-space: pre-wrap;
+          overflow: visible;
           opacity: 0;
           animation-fill-mode: forwards;
       
           &:nth-child(1) {
-            animation: typing 2s steps(30) 1.5s forwards;
+            animation: typing 2s steps(30) 2.5s forwards;
           }
           &:nth-child(2) {
-            animation: typing 2s steps(30) 3.5s forwards;
+            animation: typing 2s steps(30) 4.5s forwards;
           }
           &:nth-child(3) {
-            animation: typing 2s steps(30) 5.5s forwards;
+            animation: typing 2s steps(30) 6.5s forwards;
           }
+        }
+      }
+    }
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .test-laboratory {
+      .hero-section {
+        h1 {
+          font-size: 1.8em;
+          white-space: pre-wrap;
+        }
+  
+        .typewriter p {
+          font-size: 1.1em;
+          white-space: pre-wrap;
+          padding: 0.5em;
         }
       }
     }
