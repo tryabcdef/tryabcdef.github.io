@@ -65,106 +65,67 @@ author_profile: true
 }
 .timeline {
   position: relative;
-  padding: 20px 0;
+  padding: 40px 0;
   width: 100%;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  width: 3px;
-  height: calc(100% - 50px);
-  background: #4299e1;
-  left: 50%;
-  top: 50px;
 }
 .timeline-entry {
   position: relative;
-  margin-bottom: 80px;
-  display: flex;
-  width: 100%;
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
 }
-.timeline-entry:nth-child(odd) {
-  justify-content: flex-end;
-}
-.timeline-entry:nth-child(even) {
-  justify-content: flex-start;
-}
-.timeline-entry::before {
-  content: '';
-  position: absolute;
-  background: #4299e1;
-  z-index: 1;
-}
-.timeline-entry:nth-child(odd)::before {
-  width: 50px;
-  height: 50px;
-  right: 80%;
-  top: 10px;
-  border: 3px solid #4299e1;
-  border-left: 0;
-  border-bottom: 0;
-  border-radius: 0 50px 0 0;
-  background: transparent;
-}
-.timeline-entry:nth-child(even)::before {
-  width: 50px;
-  height: 50px;
-  left: 80%;
-  top: 10px;
-  border: 3px solid #4299e1;
-  border-right: 0;
-  border-bottom: 0;
-  border-radius: 50px 0 0 0;
-  background: transparent;
-}
-.timeline-entry:nth-child(even)::after {
-  display: none;
-}
-.timeline-dot {
-  width: 20px;
-  height: 20px;
-  background: #4299e1;
-  border-radius: 50%;
-  z-index: 2;
-  border: 4px solid white;
-  box-shadow: 0 0 0 3px #4299e1;
-  position: absolute;
-  top: 10px;
-}
-.timeline-entry:nth-child(odd) .timeline-dot {
-  right: 80%;
-  transform: translateX(50%);
-}
-.timeline-entry:nth-child(even) .timeline-dot {
-  left: 80%;
-  transform: translateX(-50%);
-}
-.timeline-entry:nth-child(odd) .timeline-content {
-  margin-right: 40px;
-}
-.timeline-entry:nth-child(even) .timeline-content {
-  margin-left: 40px;
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .timeline-content {
-  width: 80%;
   background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 0 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
   transition: all 0.3s ease;
-  z-index: 2;
+}
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4299e1, #667eea);
+}
+.entry-date {
+  font-size: 0.9rem;
+  color: #4299e1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+.timeline-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2d3748;
+  padding-left: 20px;
+}
+.timeline-content p {
+  color: #4a5568;
+  line-height: 1.8;
+  padding-left: 20px;
 }
 .timeline-content:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-.entry-date {
-  font-size: 0.9em;
-  color: #4299e1;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  box-shadow: 0 20px 40px rgba(66, 153, 225, 0.2);
 }
 .archives-link {
   text-align: center;
@@ -186,5 +147,50 @@ author_profile: true
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
   background-position: right center;
+}
+.timeline-connector {
+  position: absolute;
+  border: 3px solid #4299e1;
+  border-radius: 0 0 0 50px;
+  width: 50%;
+  height: 100px;
+  top: 50%;
+  right: -30px;
+  border-right: 0;
+  border-top: 0;
+  z-index: 1;
+}
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 4px solid #4299e1;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.timeline-entry:nth-child(odd) .timeline-dot {
+  right: -10px;
+}
+.timeline-entry:nth-child(even) .timeline-dot {
+  left: -10px;
+}
+.timeline-entry::before {
+  display: none;
+}
+/* Staggered animation delay for entries */
+.timeline-entry:nth-child(1) { animation-delay: 0.1s; }
+.timeline-entry:nth-child(2) { animation-delay: 0.3s; }
+.timeline-entry:nth-child(3) { animation-delay: 0.5s; }
+
+/* Position boxes */
+.timeline-entry:nth-child(odd) {
+  justify-content: flex-end;
+}
+
+.timeline-entry:nth-child(even) {
+  justify-content: flex-start;
 }
 </style>
