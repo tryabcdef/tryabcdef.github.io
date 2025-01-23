@@ -5,183 +5,164 @@ permalink: /wilt/
 author_profile: true
 ---
 
+<div class="wilt-container">
+ <header class="wilt-header">
+   <h1>What I Learned Today</h1>
+   <p>Documenting daily discoveries and insights in technology and personal growth</p>
+ </header>
+ <div class="timeline">
+   <article class="timeline-entry">
+     <div class="timeline-dot"></div>
+     <div class="timeline-content">
+       <div class="entry-date">12th January</div>
+       <h2>AI Articles: Applications in Testing</h2>
+       <p>Explored AI applications in software testing.</p>
+     </div>
+   </article>
+   <article class="timeline-entry">
+     <div class="timeline-dot"></div>
+     <div class="timeline-content">
+       <div class="entry-date">11th January</div>
+       <h2>Ikigai: Understanding Purpose</h2>
+       <p>Read and reflected on the concept of Ikigai.</p>
+     </div>
+   </article>
+ </div>
+ <div class="archives-link">
+   <a href="/november-wilt">View Previous Entries</a>
+ </div>
+</div>
+
 <style>
-/* Base styles for WILT page */
 .wilt-container {
-  max-width: 1200px; /* Increase width for content to span maximum area */
-  margin: 0 auto;
-  padding: 40px 20px;
+ max-width: 900px;
+ margin: 0 auto;
+ padding: 40px 20px;
 }
-
 .wilt-header {
-  text-align: center;
-  margin-bottom: 60px;
+ text-align: center;
+ margin-bottom: 60px;
 }
-
 .wilt-header h1 {
-  font-size: 3em;
-  color: #1a202c;
-  margin-bottom: 15px;
-  font-weight: 700;
-  background: linear-gradient(120deg, #4299e1, #667eea, #4299e1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: gradientFlow 3s linear infinite;
+ font-size: 3em;
+ color: #1a202c;
+ margin-bottom: 15px;
+ font-weight: 700;
+ background: linear-gradient(120deg, #4299e1, #667eea, #4299e1);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-size: 200% auto;
+ animation: gradientFlow 3s linear infinite;
 }
-
 .wilt-header p {
-  color: #718096;
-  font-size: 1.2em;
+ color: #718096;
+ font-size: 1.2em;
 }
-
 @keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+ 0% { background-position: 0% 50%; }
+ 50% { background-position: 100% 50%; }
+ 100% { background-position: 0% 50%; }
 }
-
-/* Timeline structure */
 .timeline {
-  position: relative;
-  padding: 20px 0;
+ position: relative;
+ padding: 20px 0;
 }
-
+.timeline::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 3px;
+ height: 100%;
+ background: linear-gradient(to right, #4299e1, #667eea);
+ z-index: 1;
+}
 .timeline-entry {
-  position: relative;
-  margin-bottom: 50px;
-  display: flex;
-  align-items: flex-start;
+ position: relative;
+ margin-bottom: 50px;
+ display: flex;
+ align-items: flex-start;
 }
-
 .timeline-entry:nth-child(odd) {
-  justify-content: flex-start;
+ justify-content: flex-start;
 }
-
 .timeline-entry:nth-child(even) {
-  justify-content: flex-end;
+ justify-content: flex-end;
 }
-
 .timeline-dot {
-  width: 20px;
-  height: 20px;
-  background: #4299e1;
-  border-radius: 50%;
-  z-index: 2;
-  border: 4px solid white;
-  position: relative;
-  top: 20px;
+ width: 20px;
+ height: 20px;
+ background: #4299e1;
+ border-radius: 50%;
+ z-index: 2;
+ border: 4px solid white;
+ box-shadow: 0 0 0 3px #4299e1;
+ position: absolute;
+ top: 0;
+ transform: translateY(-50%);
 }
-
-.timeline-line {
-  position: absolute;
-  height: 3px;
-  background: linear-gradient(to right, #4299e1, #667eea);
-  top: 30px;
-  z-index: 1;
+.timeline-entry:nth-child(odd) .timeline-dot {
+ left: 100%;
+ transform: translateX(-50%) translateY(-50%);
 }
-
-.timeline-entry:nth-child(odd) .timeline-line {
-  left: 0;
-  right: calc(50% + 40px); /* Line ends before content starts */
+.timeline-entry:nth-child(even) .timeline-dot {
+ right: 100%;
+ transform: translateX(50%) translateY(-50%);
 }
-
-.timeline-entry:nth-child(even) .timeline-line {
-  left: calc(50% + 40px); /* Line starts after content ends */
-  right: 0;
-}
-
 .timeline-content {
-  max-width: 50%; /* Make content span the maximum area */
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  z-index: 2;
+ max-width: 45%;
+ background: white;
+ border-radius: 15px;
+ padding: 25px;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ transition: all 0.3s ease;
+ z-index: 2;
 }
-
-.timeline-content:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
 .timeline-entry:nth-child(odd) .timeline-content {
-  text-align: left;
-  margin-left: 20px;
+ margin-left: 40px;
 }
-
 .timeline-entry:nth-child(even) .timeline-content {
-  text-align: right;
-  margin-right: 20px;
+ margin-right: 40px;
 }
-
+.timeline-content:hover {
+ transform: translateY(-5px) scale(1.02);
+ box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.timeline-entry:nth-child(odd) .timeline::before {
+ left: 0;
+ background: linear-gradient(to right, #4299e1, #667eea);
+}
+.timeline-entry:nth-child(even) .timeline::before {
+ left: 100%;
+ background: linear-gradient(to left, #4299e1, #667eea);
+}
 .entry-date {
-  font-size: 0.9em;
-  color: #4299e1;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+ font-size: 0.9em;
+ color: #4299e1;
+ font-weight: 600;
+ margin-bottom: 10px;
+ text-transform: uppercase;
+ letter-spacing: 1px;
 }
-
 .archives-link {
-  text-align: center;
-  margin-top: 60px;
-  padding: 20px;
+ text-align: center;
+ margin-top: 60px;
+ padding: 20px;
 }
-
 .archives-link a {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(120deg, #4299e1, #667eea);
-  background-size: 200% auto;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+ display: inline-block;
+ padding: 12px 24px;
+ background: linear-gradient(120deg, #4299e1, #667eea);
+ background-size: 200% auto;
+ color: white;
+ text-decoration: none;
+ border-radius: 25px;
+ font-weight: 600;
+ transition: all 0.3s ease;
 }
-
 .archives-link a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
-  background-position: right center;
+ transform: translateY(-2px);
+ box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+ background-position: right center;
 }
 </style>
-
-<div class="wilt-container">
-  <header class="wilt-header">
-    <h1>What I Learned Today</h1>
-    <p>Documenting daily discoveries and insights in technology and personal growth</p>
-  </header>
-
-  <div class="timeline">
-    <!-- Example Timeline Entries -->
-    <article class="timeline-entry">
-      <div class="timeline-line"></div>
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <div class="entry-date">12th January</div>
-        <h2>AI Articles: Applications in Testing</h2>
-        <p>Explored AI applications in software testing.</p>
-      </div>
-    </article>
-
-    <article class="timeline-entry">
-      <div class="timeline-line"></div>
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <div class="entry-date">11th January</div>
-        <h2>Ikigai: Understanding Purpose</h2>
-        <p>Read and reflected on the concept of Ikigai.</p>
-      </div>
-    </article>
-
-    <!-- Add more entries here -->
-  </div>
-
-  <div class="archives-link">
-    <a href="/november-wilt">View Previous Entries</a>
-  </div>
-</div>
