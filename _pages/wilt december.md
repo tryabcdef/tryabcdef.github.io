@@ -41,10 +41,22 @@ author_profile: true
   100% { background-position: 0% 50%; }
 }
 
+/* Timeline structure */
 .timeline {
   position: relative;
-  margin: 0;
   padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4299e1, #667eea);
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 .timeline-entry {
@@ -55,11 +67,11 @@ author_profile: true
 }
 
 .timeline-entry:nth-child(odd) {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .timeline-entry:nth-child(even) {
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .timeline-dot {
@@ -69,35 +81,20 @@ author_profile: true
   border-radius: 50%;
   z-index: 2;
   border: 4px solid white;
-  position: relative;
-  top: 0;
   box-shadow: 0 0 0 3px #4299e1;
-}
-
-.timeline-line {
   position: absolute;
-  width: 3px;
-  background: linear-gradient(to bottom, #4299e1, #667eea);
   top: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
-.timeline-entry:nth-child(odd) .timeline-line {
-  left: calc(50% - 5px);
-}
-
-.timeline-entry:nth-child(even) .timeline-line {
-  right: calc(50% - 5px);
+  transform: translateY(-50%);
 }
 
 .timeline-content {
-  max-width: 40%;
+  max-width: 45%;
   background: white;
   border-radius: 15px;
   padding: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  z-index: 2;
 }
 
 .timeline-content:hover {
@@ -158,7 +155,6 @@ author_profile: true
   <div class="timeline">
     <!-- Example Timeline Entries -->
     <article class="timeline-entry">
-      <div class="timeline-line"></div>
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <div class="entry-date">12th January</div>
@@ -168,7 +164,6 @@ author_profile: true
     </article>
 
     <article class="timeline-entry">
-      <div class="timeline-line"></div>
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <div class="entry-date">11th January</div>
@@ -176,7 +171,7 @@ author_profile: true
         <p>Read and reflected on the concept of Ikigai.</p>
       </div>
     </article>
-    
+
     <!-- Add more entries here -->
   </div>
 
