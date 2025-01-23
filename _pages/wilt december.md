@@ -8,7 +8,7 @@ author_profile: true
 <style>
 /* Base styles for WILT page */
 .wilt-container {
-  max-width: 900px;
+  max-width: 1200px; /* Increase width for content to span maximum area */
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -47,18 +47,6 @@ author_profile: true
   padding: 20px 0;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(to bottom, #4299e1, #667eea);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
 .timeline-entry {
   position: relative;
   margin-bottom: 50px;
@@ -81,14 +69,30 @@ author_profile: true
   border-radius: 50%;
   z-index: 2;
   border: 4px solid white;
-  box-shadow: 0 0 0 3px #4299e1;
+  position: relative;
+  top: 20px;
+}
+
+.timeline-line {
   position: absolute;
-  top: 0;
-  transform: translateY(-50%);
+  height: 3px;
+  background: linear-gradient(to right, #4299e1, #667eea);
+  top: 30px;
+  z-index: 1;
+}
+
+.timeline-entry:nth-child(odd) .timeline-line {
+  left: 0;
+  right: calc(50% + 40px); /* Line ends before content starts */
+}
+
+.timeline-entry:nth-child(even) .timeline-line {
+  left: calc(50% + 40px); /* Line starts after content ends */
+  right: 0;
 }
 
 .timeline-content {
-  max-width: 45%;
+  max-width: 50%; /* Make content span the maximum area */
   background: white;
   border-radius: 15px;
   padding: 25px;
@@ -155,6 +159,7 @@ author_profile: true
   <div class="timeline">
     <!-- Example Timeline Entries -->
     <article class="timeline-entry">
+      <div class="timeline-line"></div>
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <div class="entry-date">12th January</div>
@@ -164,6 +169,7 @@ author_profile: true
     </article>
 
     <article class="timeline-entry">
+      <div class="timeline-line"></div>
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <div class="entry-date">11th January</div>
