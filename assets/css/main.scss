@@ -394,6 +394,8 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     background: white;
+    display: flex;
+    flex-direction: column;
   }
   
   .archive__item--project:hover {
@@ -421,6 +423,10 @@
   
   .archive__item--project .archive__item-content {
     padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .project-tech-badges {
@@ -437,4 +443,24 @@
     border-radius: 4px;
     font-size: 12px;
     margin: 0 5px;
+  }
+  
+  .project-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .project-links a {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .project-links a:hover {
+    background-color: #0056b3;
   }
