@@ -47,28 +47,19 @@ author_profile: true
   padding: 20px 0;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  width: 3px;
-  background: linear-gradient(to bottom, #4299e1, #667eea);
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
 .timeline-entry {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 50px;
   position: relative;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .timeline-entry:nth-child(odd) {
-  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.timeline-entry:nth-child(even) {
+  justify-content: flex-start;
 }
 
 .timeline-dot {
@@ -76,27 +67,32 @@ author_profile: true
   height: 20px;
   background: #4299e1;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 2;
   border: 4px solid white;
+  position: relative;
+  top: 0;
   box-shadow: 0 0 0 3px #4299e1;
 }
 
-.timeline-dot:hover {
-  animation: pulseGlow 2s infinite;
+.timeline-line {
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(to bottom, #4299e1, #667eea);
+  top: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(66, 153, 225, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(66, 153, 225, 0); }
+.timeline-entry:nth-child(odd) .timeline-line {
+  left: calc(50% - 5px);
+}
+
+.timeline-entry:nth-child(even) .timeline-line {
+  right: calc(50% - 5px);
 }
 
 .timeline-content {
-  max-width: 45%;
+  max-width: 40%;
   background: white;
   border-radius: 15px;
   padding: 25px;
@@ -111,10 +107,12 @@ author_profile: true
 
 .timeline-entry:nth-child(odd) .timeline-content {
   text-align: left;
+  margin-left: 20px;
 }
 
 .timeline-entry:nth-child(even) .timeline-content {
   text-align: right;
+  margin-right: 20px;
 }
 
 .entry-date {
@@ -124,20 +122,6 @@ author_profile: true
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.entry-section {
-  margin-bottom: 15px;
-  padding-left: 15px;
-  border-left: 3px solid #e2e8f0;
-  transition: all 0.3s ease;
-}
-
-.entry-section:hover {
-  border-left-color: #4299e1;
-  background: rgba(66, 153, 225, 0.05);
-  padding: 10px 15px;
-  border-radius: 0 8px 8px 0;
 }
 
 .archives-link {
@@ -165,30 +149,6 @@ author_profile: true
 }
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const entries = document.querySelectorAll('.timeline-entry');
-  entries.forEach((entry, index) => {
-    entry.style.setProperty('--animation-order', index);
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  entries.forEach(entry => {
-    observer.observe(entry);
-  });
-});
-</script>
-
 <div class="wilt-container">
   <header class="wilt-header">
     <h1>What I Learned Today</h1>
@@ -198,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="timeline">
     <!-- Example Timeline Entries -->
     <article class="timeline-entry">
+      <div class="timeline-line"></div>
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <div class="entry-date">12th January</div>
@@ -207,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </article>
 
     <article class="timeline-entry">
+      <div class="timeline-line"></div>
       <div class="timeline-dot"></div>
       <div class="timeline-content">
         <div class="entry-date">11th January</div>
