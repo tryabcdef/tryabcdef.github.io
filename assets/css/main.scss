@@ -376,79 +376,65 @@
   }
 }
 
+/* Grid Container */
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column on smaller screens */
-    gap: 2rem; /* Space between tiles */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tiles adjust dynamically */
+    gap: 2.5rem; /* Consistent spacing between tiles */
     margin: 2rem auto;
-    padding: 0 15px;
-    max-width: 900px; /* Maximum width of the grid */
+    padding: 0 20px;
+    max-width: 1200px; /* Utilize screen width effectively */
 }
 
+/* Project Tiles */
 .archive__item--project {
-    max-width: 100%; /* Ensure tiles are responsive */
-    border-radius: 8px;
+    width: 100%;
+    min-height: 200px;
+    border-radius: 10px; /* Subtle rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    background: #ffffff;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    background: white;
     display: flex;
     flex-direction: column;
-    padding: 1rem 1.5rem;
-    
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.archive__item--project:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Tile Content */
 .archive__item--project .archive__item-content {
-    padding: 1rem 0;
-    flex-grow: 1;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background: #f9fafb;
-    border-top: 1px solid #eee;
+    gap: 0.5rem;
 }
 
 .archive__item--project .archive__item-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2c3e50; /* Modern, clean text color */
+    margin-bottom: 0.5rem;
 }
 
 .archive__item--project .archive__item-date {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
-    color: #7f8c8d;
     font-size: 0.9rem;
+    color: #7f8c8d; /* Muted color for less emphasis */
 }
 
-.project-links a {
-    background-color: #3498db;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+.archive__item--project .archive__item-date i {
+    margin-right: 0.5rem; /* Spacing for the icon */
+    color: #34495e;
 }
 
-.project-links a:hover {
-    background-color: #2980b9;
-}
-
-/* Larger screen adjustments */
-@media screen and (min-width: 768px) {
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
     .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Adjust for larger screens */
-        gap: 3rem; /* Larger gaps on wider screens */
-    }
-
-    .archive__item--project {
-        max-width: 100%;
+        grid-template-columns: 1fr; /* Single column for small screens */
+        gap: 1.5rem; /* Adjusted spacing for small screens */
     }
 }
