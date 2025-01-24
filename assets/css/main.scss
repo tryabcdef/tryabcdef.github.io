@@ -378,8 +378,8 @@
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+    gap: 2.5rem;
     padding: 20px;
   }
   
@@ -399,7 +399,7 @@
   
   .archive__item--project:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
   .archive__item--project .archive__item-teaser {
