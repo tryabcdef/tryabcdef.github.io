@@ -385,24 +385,32 @@
     padding: 0 20px;
     max-width: 1200px; /* Maximum width of the container */
 }
+/* Grid Container */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Dynamically adjust tiles */
+    gap: 2.5rem; /* Consistent spacing between tiles */
+    margin: 2rem auto;
+    padding: 0 20px;
+    max-width: 1200px; /* Ensure container utilizes screen width */
+}
 
 /* Project Tiles */
 .archive__item--project {
     width: 100%;
-    max-width: 100%; /* Allow tiles to stretch within the grid */
-    min-height: 220px;
-    border-radius: 10px; /* Rounded corners for modern aesthetics */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     background-color: #ffffff; /* Clean white background */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem; /* Padding inside the tile */
+    padding: 1.5rem; /* Padding for proper spacing */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
 .archive__item--project:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transform: translateY(-5px); /* Subtle lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Content Inside Tiles */
@@ -410,13 +418,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem; /* Space between title, description, and other elements */
+    gap: 1rem; /* Spacing between title, description, etc. */
 }
 
 .archive__item--project .archive__item-title {
     font-size: 1.4rem;
-    font-weight: 600;
-    color: #2c3e50; /* Modern and clean text color */
+    font-weight: bold;
+    color: #2c3e50; /* Professional and modern text color */
     margin-bottom: 0.5rem;
 }
 
@@ -425,12 +433,17 @@
     align-items: center;
     font-size: 0.9rem;
     color: #7f8c8d; /* Muted text for less emphasis */
+    gap: 0.5rem; /* Space between icon and date text */
 }
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .project-grid {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-        gap: 1.5rem; /* Adjust spacing for smaller screens */
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 2rem; /* Adjust spacing for smaller screens */
+    }
+
+    .archive__item--project {
+        min-height: 200px; /* Adjust tile height for mobile */
     }
 }
