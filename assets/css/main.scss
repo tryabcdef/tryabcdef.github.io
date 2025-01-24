@@ -41,213 +41,285 @@
 @import "print";
 @import "project-cards";
 
-/* Core variables */
-:root {
-    --primary: #2D3250;
-    --secondary: #424769;
-    --accent: #7077A1;
-    --light: #F6B17A;
-    --background: #f7f9fc;
+
+/* Custom Animations and Styles */
+@keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
-  /* Base styles */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: var(--background);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  @keyframes typing {
+    from {
+      width: 0;
+      opacity: 1;
+    }
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
   }
   
   .test-laboratory {
-    .hero-section {
-      margin-bottom: 3em;
-  
-      h1 {
-        font-size: 2em;
-        animation: typing 2s steps(15) forwards;
-        white-space: pre-wrap;
-        overflow: hidden;
-        border-right: none;
-      }
-  
-      .typewriter {
-        position: relative;
-        font-family: 'Courier New', Courier, monospace;
-  
-        p {
-          font-size: 1.3em;
-          margin: 0.5em 0;
-          padding-left: 1em;
-          position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2em 1em;
+      background: var(--background);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    
+      .hero-section {
+        margin-bottom: 3em;
+    
+        h1 {
+          font-size: 2em;
+          animation: typing 2s steps(15) forwards;
           white-space: pre-wrap;
-          overflow: visible;
-          opacity: 0;
-          animation-fill-mode: forwards;
-  
-          &:nth-child(1) {
-            animation: typing 2s steps(30) 2.5s forwards;
-          }
-          &:nth-child(2) {
-            animation: typing 2s steps(30) 4.5s forwards;
-          }
-          &:nth-child(3) {
-            animation: typing 2s steps(30) 6.5s forwards;
+          overflow: hidden;
+          border-right: none;
+        }
+    
+        .typewriter {
+          position: relative;
+          font-family: 'Courier New', Courier, monospace;
+          
+          p {
+            font-size: 1.3em;
+            margin: 0.5em 0;
+            padding-left: 1em;
+            position: relative;
+            white-space: pre-wrap;
+            overflow: visible;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        
+            &:nth-child(1) {
+              animation: typing 2s steps(30) 2.5s forwards;
+            }
+            &:nth-child(2) {
+              animation: typing 2s steps(30) 4.5s forwards;
+            }
+            &:nth-child(3) {
+              animation: typing 2s steps(30) 6.5s forwards;
+            }
           }
         }
       }
     }
-  }
+    
+    @keyframes typing {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+      to {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .test-laboratory {
+        .hero-section {
+          h1 {
+            font-size: 1.8em;
+            white-space: pre-wrap;
+          }
+    
+          .typewriter p {
+            font-size: 1.1em;
+            white-space: pre-wrap;
+            padding: 0.5em;
+          }
+        }
+      }
+    }
+    
+    /* Simplified typing animation without blinking */
+    @keyframes typing {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+      to {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+        
+        
+        
+    
   
-  .skills-section {
-    margin-bottom: 3em;
+    .skills-section {
+      margin-bottom: 3em;
   
-    .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1em;
-      margin: 2em 0;
+      .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5em;
+        margin: 2em 0;
+      }
+  
+      .skill-card {
+        background: var(--primary);
+        color: white;
+        padding: 0.8em 1.5em;
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          left: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 8px;
+          height: 8px;
+          background-color: var(--light);
+          border-radius: 50%;
+          animation: blink 1s infinite;
+        }
+  
+        &:hover {
+          background: var(--accent);
+          transform: translateY(-5px) scale(1.05);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+      }
     }
   
-    .skill-card {
-      position: relative;
-      background: #2B2D42;
-      color: white;
-      padding: 0.6em 1.8em;
-      border-radius: 12px;
-      text-align: center;
-      transition: all 0.3s ease;
-      animation: fadeUp 0.5s ease-out forwards;
+    .achievements-section {
+      margin-bottom: 3em;
   
-      &:before {
-        content: "•";
+      .achievement-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+  
+      .flip-card {
+        perspective: 1000px;
+        height: 150px;
+        
+        &:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+      }
+  
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+  
+      .flip-card-front,
+      .flip-card-back {
         position: absolute;
-        left: 0.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-        color: #2B2D42;
-        animation: blink 1s infinite;
-      }
-  
-      &:hover {
-        background: grey;
-        transform: scale(1.1);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        width: 220px;
-      }
-    }
-  }
-  
-  .achievements-section {
-    margin-bottom: 3em;
-  
-    .achievement-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5em;
-      margin: 1em 0;
-    }
-  
-    .flip-card {
-      perspective: 1000px;
-      position: relative;
-      width: 100%;
-      height: 150px;
-  
-      &:hover .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-    }
-  
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-    }
-  
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-  
-    .flip-card-front {
-      background: linear-gradient(145deg, #f8f9fa, #e9ecef);
-      color: #333;
-  
-      h3 {
-        margin: 0;
-        font-size: 1.5em;
-      }
-    }
-  
-    .flip-card-back {
-      background: linear-gradient(145deg, #007bff, #0056b3);
-      color: white;
-      transform: rotateY(180deg);
-  
-      p {
-        margin: 0;
-        font-size: 1.2em;
-      }
-    }
-  }
-  
-  .certifications-section {
-    margin: 2em 0;
-  
-    .cert-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5em;
-      margin: 1em 0;
-    }
-  
-    .cert-item {
-      background: white;
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5em;
-      animation: bounce 2s infinite;
-  
-      &:nth-child(even) {
-        animation-delay: 1s;
-      }
-  
-      span {
-        font-weight: 500;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
         display: flex;
         align-items: center;
-        gap: 0.5em;
+        justify-content: center;
+        padding: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       }
   
-      small {
-        color: #666;
+      .flip-card-front {
+        background: var(--primary);
+        color: white;
+        
+        h3 {
+          margin: 0;
+          font-size: 1.3em;
+        }
       }
   
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+      .flip-card-back {
+        background: var(--light);
+        color: var(--primary);
+        transform: rotateY(180deg);
+        
+        p {
+          margin: 0;
+          font-size: 1.1em;
+        }
       }
     }
-  }
   
+    .certifications-section {
+      margin: 2em 0;
+  
+      .cert-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        margin: 1em 0;
+      }
+  
+      .cert-item {
+        background: white;
+        padding: 1.5em;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        animation: bounce 2s infinite;
+  
+        &:nth-child(even) {
+          animation-delay: 1s;
+        }
+  
+        span {
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+        }
+  
+        small {
+          color: #666;
+        }
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+          background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        }
+      }
+    }
+  
+  
+  /* Mobile Responsiveness */
   @media screen and (max-width: 768px) {
     .test-laboratory {
       .hero-section h1 {
@@ -260,6 +332,29 @@
   
       .certifications-section .cert-item {
         width: 100%;
+      }
+  
+      .skills-section {
+        .skill-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1em;
+        }
+  
+        .skill-card {
+          padding: 0.6em 1.2em;
+          font-size: 0.9em;
+        }
+      }
+  
+      .achievements-section {
+        .achievement-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+  
+        .flip-card {
+          height: 130px;
+        }
       }
     }
   }
@@ -303,6 +398,7 @@
     }
   }
   
+  /* Update mobile responsiveness */
   @media screen and (max-width: 768px) {
     .test-laboratory {
       .hero-section h1 {
@@ -320,3 +416,22 @@
       }
     }
   }
+  
+  :root {
+    --primary: #2D3250;
+    --secondary: #424769;
+    --accent: #7077A1;
+    --light: #F6B17A;
+    --background: #f7f9fc;
+  }
+  
+  @keyframes blink {
+    0%, 100% { 
+      opacity: 1;
+    }
+    50% { 
+      opacity: 0.3;
+    }
+  }
+  
+  
