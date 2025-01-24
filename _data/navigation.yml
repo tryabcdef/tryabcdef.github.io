@@ -6,14 +6,16 @@
 
 main:
 
-  - title: "Projects"
-    url: /projects/
+
 
   - title: "Testing Musings"
     url: /testing-musings/    
     
   - title: "Testing Mindspace"
     url: /testing-mindspace/
+
+  - title: "Projects"
+    url: /projects/
         
   - title: "Books"
     url: /year-archive/
