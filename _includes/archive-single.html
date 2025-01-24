@@ -1,4 +1,5 @@
 {% include base_path %}
+
 {% if post.header.teaser %}
   {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
 {% else %}
@@ -11,54 +12,49 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: 'list' }}__item">
-  <article class="archive__item archive__item--project" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: '/images/' | prepend: base_path }}"
-          {% endif %}
-          alt="{{ title }}">
-        <div class="project-overlay">
-          <div class="project-overlay-content">
-            <p>{{ post.excerpt | truncate: 100 }}</p>
-            <div class="project-links">
-              {% if post.link %}
-                <a href="{{ post.link }}" class="btn btn-primary">Project Link</a>
-              {% endif %}
-              {% if post.github %}
-                <a href="{{ post.github }}" class="btn btn-secondary">GitHub</a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
+<div class="project-card" style="width: 100%; margin-bottom: 2em;">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork" style="width: 100%; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h2 class="archive__item-title" itemprop="headline" style="margin-top: 0; margin-bottom: 1em;">
+      {% if post.link %}
+        <a href="{{ post.link }}" style="text-decoration: none; color: #333;">{{ title }}</a> 
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink" style="margin-left: 10px;">
+          <i class="fa fa-link" aria-hidden="true" title="permalink"></i>
+          <span class="sr-only">Permalink</span>
+        </a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink" style="text-decoration: none; color: #333;">{{ title }}</a>
+      {% endif %}
+    </h2>
+
+    {% if post.excerpt %}
+      <div class="archive__item-excerpt" itemprop="description" style="margin-bottom: 1em; color: #666;">
+        {{ post.excerpt | markdownify }}
       </div>
     {% endif %}
 
-    <div class="archive__item-content">
-      <h2 class="archive__item-title" itemprop="headline">
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      </h2>
-
-      {% if post.technologies %}
-        <div class="project-tech-badges">
-          {% for tech in post.technologies %}
-            <span class="project-tech-badge">{{ tech }}</span>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1em;">
+      {% if post.tags %}
+        <div class="project-tags" style="display: flex; gap: 8px; flex-wrap: wrap;">
+          {% for tag in post.tags %}
+            <span style="background-color: #f0f0f0; padding: 4px 12px; border-radius: 4px; font-size: 0.9em; color: #666;">
+              {{ tag }}
+            </span>
           {% endfor %}
         </div>
       {% endif %}
 
-      {% if post.date %}
-        <p class="page__date">
-          <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Created:</strong> 
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%B %d, %Y" }}
-          </time>
-        </p>
-      {% endif %}
+      <div class="project-meta" style="display: flex; gap: 1em; color: #666; font-size: 0.9em;">
+        <span>
+          <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> 
+          {{ post.date | date: "%B %d, %Y" }}
+        </span>
+        {% if post.venue %}
+          <span>
+            <i class="fa fa-fw fa-code-fork" aria-hidden="true"></i>
+            {{ post.venue }}
+          </span>
+        {% endif %}
+      </div>
     </div>
   </article>
 </div>

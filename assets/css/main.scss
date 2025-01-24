@@ -39,6 +39,7 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+@import "project-cards";
 
 /* Custom Animations and Styles */
 @keyframes fadeUp {
@@ -376,74 +377,3 @@
   }
 }
 
-/* Grid Container */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Dynamically adjust tiles based on screen width */
-    gap: 2rem; /* Space between tiles */
-    margin: 2rem auto;
-    padding: 0 20px;
-    max-width: 1200px; /* Maximum width of the container */
-}
-/* Grid Container */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Dynamically adjust tiles */
-    gap: 2.5rem; /* Consistent spacing between tiles */
-    margin: 2rem auto;
-    padding: 0 20px;
-    max-width: 1200px; /* Ensure container utilizes screen width */
-}
-
-/* Project Tiles */
-.archive__item--project {
-    width: 100%;
-    border-radius: 10px; /* Rounded corners for modern look */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    background-color: #ffffff; /* Clean white background */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem; /* Padding for proper spacing */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
-}
-
-.archive__item--project:hover {
-    transform: translateY(-5px); /* Subtle lift effect */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-/* Content Inside Tiles */
-.archive__item--project .archive__item-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem; /* Spacing between title, description, etc. */
-}
-
-.archive__item--project .archive__item-title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #2c3e50; /* Professional and modern text color */
-    margin-bottom: 0.5rem;
-}
-
-.archive__item--project .archive__item-date {
-    display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-    color: #7f8c8d; /* Muted text for less emphasis */
-    gap: 0.5rem; /* Space between icon and date text */
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: 1fr; /* Single column for smaller screens */
-        gap: 2rem; /* Adjust spacing for smaller screens */
-    }
-
-    .archive__item--project {
-        min-height: 200px; /* Adjust tile height for mobile */
-    }
-}
