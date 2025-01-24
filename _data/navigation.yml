@@ -6,11 +6,9 @@
 
 main:
 
-
-
-  - title: "xyz"
-    url: /testing-musings/    
-    
+  - title: "Testing Mindspace"
+    url: /testing-mindspace/
+     
   - title: "Testing Mindspace"
     url: /testing-mindspace/
 
