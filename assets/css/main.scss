@@ -379,13 +379,13 @@
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
-    gap: 2.5rem;
+    gap: 3rem;
     padding: 20px;
   }
   
   .archive__item--project {
     width: 100%;
-    height: 200px;
+    height: 220px;
     border-radius: 12px;
     position: relative;
     border: 1px solid #e0e0e0;
@@ -409,6 +409,8 @@
     position: relative;
   }
   
+  /* Other styles remain the same */
+
   .archive__item--project .archive__item-teaser img {
     width: 100%;
     height: 100%;
