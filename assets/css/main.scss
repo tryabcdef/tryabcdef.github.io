@@ -379,29 +379,31 @@
 /* Grid Container */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tiles adjust dynamically */
-    gap: 2.5rem; /* Consistent spacing between tiles */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Dynamically adjust columns */
+    gap: 2rem; /* Consistent spacing between tiles */
     margin: 2rem auto;
-    padding: 0 20px;
-    max-width: 1200px; /* Utilize screen width effectively */
+    padding: 0 15px;
+    max-width: 1100px; /* Adjust container width for better balance */
 }
 
 /* Project Tiles */
 .archive__item--project {
     width: 100%;
-    min-height: 200px;
-    border-radius: 10px; /* Subtle rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    background: #ffffff;
+    min-height: 250px; /* Provide consistent height */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    background-color: #ffffff; /* Clean background */
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem; /* Add inner padding for cleaner content alignment */
 }
 
+/* Hover Effects */
 .archive__item--project:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-8px); /* Add a subtle lift effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Tile Content */
@@ -409,13 +411,13 @@
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .archive__item--project .archive__item-title {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #2c3e50; /* Modern, clean text color */
+    color: #2c3e50; /* Clean and modern text color */
     margin-bottom: 0.5rem;
 }
 
@@ -427,14 +429,18 @@
 }
 
 .archive__item--project .archive__item-date i {
-    margin-right: 0.5rem; /* Spacing for the icon */
+    margin-right: 0.5rem; /* Add spacing for the date icon */
     color: #34495e;
 }
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .project-grid {
-        grid-template-columns: 1fr; /* Single column for small screens */
-        gap: 1.5rem; /* Adjusted spacing for small screens */
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        gap: 1.5rem; /* Adjust spacing */
+    }
+
+    .archive__item--project {
+        min-height: 200px; /* Adjust height for smaller screens */
     }
 }
