@@ -27,23 +27,38 @@ redirect_from:
       <div class="skill-card">QA Documentation</div>
     </div>
   </div>
-  <div class="achievements-grid">
-    <div class="achievement-card">
-      <div class="flip-content">
-        <div class="flip-front">👑 QA Master</div>
-        <div class="flip-back">Copper Mobile's Bug Hunter Extraordinaire</div>
+  <div class="achievements-section">
+    <h2>🏆 Tales of Triumph</h2>
+    <div class="achievement-grid">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>👑 QA Master</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Recognized for mastering QA tools and strategies!</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="achievement-card">
-      <div class="flip-content">
-        <div class="flip-front">🏆 Call of Duty</div>
-        <div class="flip-back">Going Beyond Testing Boundaries</div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🏆 Call of Duty</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Successfully led a critical release under tight deadlines!</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="achievement-card">
-      <div class="flip-content">
-        <div class="flip-front">🎯 Bugathon Champ</div>
-        <div class="flip-back">Most Bugs Captured in Record Time</div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🎯 Bugathon Champ</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Won the company-wide bug-hunting competition!</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
