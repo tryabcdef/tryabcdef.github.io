@@ -12,3 +12,8 @@ author_profile: true
   {% include archive-single.html %}
 {% endfor %}
 
+{% if jekyll.environment == "production" %}
+  <script src="{{ '/assets/js/wilt.js' | relative_url }}"></script>
+{% else %}
+  <script src="{{ '/assets/js/wilt.js' | absolute_url }}"></script>
+{% endif %}
